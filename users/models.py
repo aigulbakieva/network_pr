@@ -22,6 +22,7 @@ class User(AbstractUser):
         verbose_name="имя",
         help_text="Укажите имя",
     )
+    is_active = models.BooleanField(default=True, verbose_name="Активный пользователь")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

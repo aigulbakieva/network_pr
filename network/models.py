@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Seller(models.Model):
-
     TYPE = [("F", "завод"), ("RN", "розничная сеть"), ("IE", "ИП")]
     LEVEL = [("0", "0"), ("1", "1"), ("2", "2")]
 
@@ -31,6 +30,9 @@ class Seller(models.Model):
     )
     created_time = models.DateTimeField(
         auto_now_add=True, verbose_name="Время создания"
+    )
+    level = models.IntegerField(
+        verbose_name="уровень звена", default=0, null=True, blank=True
     )
 
     def __str__(self):
